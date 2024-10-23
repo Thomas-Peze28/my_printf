@@ -2,14 +2,18 @@
 ** EPITECH PROJECT, 2024
 ** my_strncmp
 ** File description:
-** Compare two string
+** same than my_strcmp but with bytes
 */
-
-#include "my.h"
 
 int my_strncmp(char const *s1, char const *s2, int n)
 {
-    (void)s1;
-    (void)s2;
+    int comp = 0;
+
+    for (int i = 0; i <= n; i++) {
+        if (s1[i] != s2[i]) {
+            comp = (s1[i] - s2[i]);
+            return (comp);
+        }
+    }
     return 0;
 }

@@ -6,11 +6,11 @@
 */
 
 #include <stdarg.h>
+#include "include/my.h"
 
 int witch_f(char fonction, va_list ap)
 {
     char *str;
-    int nb;
 
     if (fonction == 'd' || fonction == 'i') {
         return my_put_nbr(va_arg(ap, int));
@@ -31,7 +31,7 @@ int witch_f(char fonction, va_list ap)
     return 0;
 }
 
-int mini_printf(const char *format, ...)
+int my_printf(const char *format, ...)
 {
     va_list ap;
     int i = 0;

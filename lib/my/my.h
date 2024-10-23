@@ -15,7 +15,6 @@ void my_swap(int *a, int *b);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
 int my_getnbr(char const *str);
-void my_sort_int_array(int *tab, int size);
 int my_compute_power_rec(int nb, int power);
 int my_compute_square_root(int nb);
 int my_is_prime(int nb);
@@ -38,5 +37,9 @@ int my_showstr(char const *str);
 int my_showmem(char const *str, int size);
 char *my_strcat(char *dest, char const *src);
 char *my_strncat(char *dest, char const *src, int nb);
+void my_sort_int_array(int *tab, int size);
+int check_lettre(const char *str, int i);
+int check_number(const char const *str, int i);
+int my_getsign(char const *str);
 
 #endif /* MY_ */
