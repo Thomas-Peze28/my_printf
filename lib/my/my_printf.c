@@ -1,0 +1,62 @@
+/*
+** EPITECH PROJECT, 2024
+** mini_printf
+** File description:
+** a easy version of printf
+*/
+
+#include <stdarg.h>
+#include "include/my.h"
+
+int witch_f_follow(char fonction, va_list ap)
+{
+    switch (fonction) {
+    case 'd':
+        return my_put_nbr(va_arg(ap, int));
+    case 'i':
+        return my_put_nbr(va_arg(ap, int));
+    default:
+        return 0;
+    }
+}
+
+int witch_f(char fonction, va_list ap)
+{
+    char *str;
+
+    switch (fonction) {
+    case 'c':
+        my_putchar(va_arg(ap, int));
+        return 1;
+    case 's':
+        str = va_arg(ap, char *);
+        my_putstr(str);
+        return (my_strlen(str));
+    case '%':
+        my_putchar('%');
+        return 1;
+    default:
+        return witch_f_follow(fonction, ap);
+    }
+}
+
+int my_printf(const char *format, ...)
+{
+    va_list ap;
+    int i = 0;
+    int nbcara = 0;
+
+    va_start(ap, format);
+    while (format[i] != '\0') {
+        if (format[i] != '%') {
+            my_putchar(format[i]);
+            nbcara++;
+        } else {
+            nbcara = nbcara + witch_f(format[i + 1], ap);
+            i++;
+        }
+        i++;
+    }
+    va_end(ap);
+    return nbcara;
+}

@@ -17,7 +17,7 @@ CFLAGS = -I./include -L./lib/my -lmy -Wall -Wextra -Werror
 all: $(OBJ)
 	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
-clean: 
+clean:
 	rm -f $(OBJ)
 
 fclean: clean

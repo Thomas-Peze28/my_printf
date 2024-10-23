@@ -31,6 +31,7 @@ SRC	=	my_compute_power_rec.c	\
 		my_swap.c	\
         my_getsign.c    \
 		my_str_to_word_array.c	\
+		my_put_float.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -39,9 +40,9 @@ NAME	=	libmy.a
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	ar rc $(NAME) $(OBJ)
-	cp my.h ../../include
-	cp $(NAME) ../
+	@ar rc $(NAME) $(OBJ)
+	@cp my.h ../../include
+	@cp $(NAME) ../
 
 clean:
 	rm -f $(OBJ)
@@ -49,7 +50,6 @@ clean:
 fclean:	clean
 	rm -f $(NAME)
 
-re:
-	fclean all
+re:	fclean all
 
 .PHONY: all clean fclean re

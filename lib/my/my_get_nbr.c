@@ -7,9 +7,6 @@
 
 #include "my.h"
 
-int check_number(const char *str, int i);
-int check_lettre(const char *str, int i);
-
 int check_after_num(const char *str, int i, int number_find)
 {
     if (check_number(str, i) == 1) {

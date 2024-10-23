@@ -5,7 +5,7 @@
 ** main
 */
 
-int my_printf(const char *format, ...);
+#include "include/my.h"
 
 int main(void)
 {
