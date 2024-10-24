@@ -6,7 +6,6 @@
 ##
 
 SRC	=	main.c	\
-		my_printf.c	\
 
 NAME	=	my_printf
 
@@ -14,10 +13,16 @@ OBJ	=	$(SRC:.c=.o)
 
 CFLAGS = -I./include -L./lib/my -lmy -Wall -Wextra -Werror
 
-all: $(OBJ)
+all: build_lib $(OBJ)
 	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
-clean:
+build_lib:
+		make -C ./lib/my/
+
+clean_lib:
+		make clean -C ./lib/my/
+
+clean: clean_lib
 	rm -f $(OBJ)
 
 fclean: clean
