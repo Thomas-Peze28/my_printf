@@ -6,7 +6,7 @@
 */
 
 #include <stdarg.h>
-#include "include/my.h"
+#include "my.h"
 
 int witch_f_follow(char fonction, va_list ap)
 {
@@ -15,6 +15,8 @@ int witch_f_follow(char fonction, va_list ap)
         return my_put_nbr(va_arg(ap, int));
     case 'i':
         return my_put_nbr(va_arg(ap, int));
+    case 'f':
+        return my_put_float(va_arg(ap, double));
     default:
         return 0;
     }

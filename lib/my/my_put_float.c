@@ -7,17 +7,21 @@
 
 #include "my.h"
 
-void my_put_float(float n)
+int my_put_float(double n)
 {
     int fristNum = (int)n;
     int reminder;
+    int nbcara;
 
-    my_put_nbr(fristNum);
+    nbcara = my_put_nbr(fristNum);
     my_putchar('.');
-    n = n * 100;
-    reminder = (int)n % 100;
+    nbcara++;
+    n = n * 1000000;
+    reminder = (int)n % 1000000;
     if (reminder < 10) {
         my_putchar('0');
+        nbcara++;
     }
-    my_put_nbr(reminder);
+    nbcara = my_put_nbr(reminder);
+    return nbcara;
 }
