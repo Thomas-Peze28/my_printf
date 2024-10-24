@@ -41,7 +41,8 @@ void my_sort_int_array(int *tab, int size);
 int check_lettre(const char *str, int i);
 int check_number(const char *str, int i);
 int my_getsign(char const *str);
-void my_put_float(float n);
+int my_put_float(double n, int pre);
 int my_printf(const char *format, ...);
+double my_round(double n, int pres);
 
 #endif /* MY_ */
