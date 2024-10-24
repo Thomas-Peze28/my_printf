@@ -9,6 +9,6 @@
 
 int main(void)
 {
-    my_printf("hello %d", 16);
+    my_printf("h %d %s %X", 10, "W", 61);
     return 0;
 }
