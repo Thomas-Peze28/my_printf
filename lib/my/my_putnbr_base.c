@@ -7,26 +7,37 @@
 #include <stdlib.h>
 #include "my.h"
 
-int my_putnbr_base(int nbr, char const *base)
+
+int funct_isneg(int nbr, int isneg)
 {
-    int rest = 0;
-    int base_num = my_strlen(base);
-    char* result;
-    int i = 0;
-    int isneg = 0;
-    
-    result = malloc(0);
+    if (nbr < 0) {
+        nbr = -(nbr);
+        isneg = 1;
+        return isneg;
+    }
+}
+
+int zero_case(int nbr)
+{
     if (nbr == 0) {
         my_put_nbr(0);
         return 0;
     }
-    if (nbr < 0) {
-        nbr = -(nbr);
-        isneg = 1;
-    }
-    while(nbr != 0) {
+}
+
+int my_putnbr_base(int nbr, char const *base)
+{
+    int rest = 0;
+    int base_num = my_strlen(base);
+    char *result = malloc(0);
+    int i = 0;
+    int isneg = 0;
+
+    zero_case(nbr);
+    funct_isneg(nbr, isneg);
+    while (nbr != 0) {
         rest = nbr % base_num;
-        nbr  = nbr / base_num;
+        nbr = nbr / base_num;
         result[i] += base[rest];
         i++;
     }
