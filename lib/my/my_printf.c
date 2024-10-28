@@ -44,7 +44,7 @@ int witch_f(char fonction, va_list ap, int nb_chara)
         my_putchar('%');
         return 1;
     case 'n':
-        my_put_nbr(nb_chara);
+        *va_arg(ap, int *) = nb_chara;
         return 0;
     default:
         return witch_f_follow(fonction, ap);
