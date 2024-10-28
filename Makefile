@@ -7,7 +7,7 @@
 
 SRC	=	main.c	\
 
-NAME	=	my_printf
+NAME	=	libmy.a
 
 OBJ	=	$(SRC:.c=.o)
 
