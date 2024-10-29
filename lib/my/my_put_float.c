@@ -19,8 +19,12 @@ int my_put_float(double n, int pre)
     n = n * pre;
     reminder = (long)n % pre;
     if (reminder < 10) {
-        my_putchar('0');
-        nbcara++;
+        pre = pre / 10;
+        while (pre != 1) {
+            my_putchar('0');
+            nbcara++;
+            pre = pre / 10;
+        }
     }
     nbcara = my_put_nbr(reminder);
     return nbcara;
