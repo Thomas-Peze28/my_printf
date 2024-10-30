@@ -32,6 +32,7 @@ SRC	=	my_compute_power_rec.c	\
         my_getsign.c    \
 		my_str_to_word_array.c	\
 		my_put_float.c	\
+		my_putnbr_base.c	\
 		my_printf.c	\
 		my_round.c	\
 
