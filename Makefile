@@ -1,36 +1,19 @@
 ##
 ## EPITECH PROJECT, 2024
-## makefile pong seb
+## makefile printf
 ## File description:
 ## makfile
 ##
 
-SRC	=	main.c	\
-
-NAME	=	libmy.a
-
-OBJ	=	$(SRC:.c=.o)
-
-CFLAGS = -I./include -L./lib/my -lmy -Wall -Wextra -Werror
-
-all: build_lib $(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CFLAGS)
+all: build_lib
 
 build_lib:
 		make -C ./lib/my/
 
-clean_lib:
-		make clean -C ./lib/my/
+clean:
+	make clean -C ./lib/my/
 
-clean: clean_lib
-	rm -f $(OBJ)
-
-fclean: clean
-		rm -f $(NAME)
+fclean: 
+	make fclean -C ./lib/my/
 
 re: fclean all
-
-run: re
-	./$(NAME)
-
-.PHONY: all fclean clean re
