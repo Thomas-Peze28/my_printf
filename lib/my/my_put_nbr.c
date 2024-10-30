@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int put_extreme_min(void)
+long put_extreme_min(void)
 {
     my_putchar(45);
     my_putchar(50);
@@ -23,10 +23,10 @@ int put_extreme_min(void)
     return 11;
 }
 
-int my_put_nbr(int nb)
+long my_put_nbr(long nb)
 {
-    int i = 1;
     int nb_count = 0;
+    long i = 1;
 
     if (nb == -2147483648) {
         put_extreme_min();

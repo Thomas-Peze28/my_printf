@@ -11,7 +11,7 @@ double my_round(double n, int pres)
     double rest;
 
     n = n * pres;
-    dot = (int)n;
+    dot = (long)n;
     rest = n - dot;
     if (rest <= 0.5) {
         return dot / pres;

@@ -12,12 +12,11 @@
 
 int main(void)
 {
-    printf("Son Unsigned int : %u\n", 50);
-    my_printf("Mon unsigned int : %u\n\n", 50);
-    printf("Son Unsigned int : %u\n", -1);
-    my_printf("Mon unsigned int : %u\n\n", -1);
-    printf("Son Unsigned int : %u\n", -10);
-    my_printf("Mon unsigned int : %u\n\n", -10);
+    int len;
+    int len2;
 
+    my_printf("h %d %n %s %n\n", 10, &len, "World", &len2);
+    my_printf("%s %X\n", "Conv:", 61);
+    my_printf("\n");
     return 0;
 }
