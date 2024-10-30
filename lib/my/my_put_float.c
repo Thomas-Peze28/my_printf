@@ -9,14 +9,14 @@
 
 int my_put_float(double n, int pre)
 {
-    long fristNum = (int)n;
+    long fristNum = (long)n;
     long reminder;
     long nbcara;
 
     nbcara = my_put_nbr(fristNum);
     my_putchar('.');
     nbcara++;
-    n = n * pre;
+    n = my_round(n * pre, 1);
     reminder = (long)n % pre;
     if (reminder < 10) {
         pre = pre / 10;

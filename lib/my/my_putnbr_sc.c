@@ -5,19 +5,10 @@
 ** print your number in the scientific version
 */
 
-#include <stdio.h>
 #include "my.h"
 
-int nota_sc(int dot)
+int nota_sc_cont(int dot, int nbcara)
 {
-    int nbcara = 0;
-
-    my_putchar('e');
-    if (dot == 0) {
-        my_putstr("+00");
-        nbcara = nbcara + 2;
-        return nbcara;
-    }
     if (dot < 11 && dot > -11) {
         if (dot > 0) {
             my_putstr("+0");
@@ -35,6 +26,20 @@ int nota_sc(int dot)
             nbcara = (my_put_nbr(dot * -1 - 1));
         }
     }
+    return nbcara;
+}
+
+int nota_sc(int dot)
+{
+    int nbcara = 0;
+
+    my_putchar('e');
+    if (dot == 0) {
+        my_putstr("+00");
+        nbcara = nbcara + 2;
+        return nbcara;
+    }
+    nbcara = nbcara + nota_sc_cont(dot, nbcara);
     return nbcara;
 }
 
@@ -59,27 +64,13 @@ int my_putnbr_sc(double n, long pre)
             temp = posn / div;
             div = div * 10;
             dot++;
-            printf("%ld %f %ld\n", pre, temp, pre * 10);
-            //if (temp > pre * 10 && temp < pre * 100)
-                //temp = my_round(temp, 10);
         }
-    } else if (temp > 0) {
-        while (temp < 1) {  
+    } else {
+        while (temp < 1) {
             temp = posn * div;
             div = div * 10;
             dot--;
         }
     }
-    printf("%f\n", temp);
     return (my_put_float(temp, pre) + nota_sc(dot));
 }
-
-int main(void) 
-{
-    double a = 12468367;
-    printf("printf: %e\n", a);
-    my_putnbr_sc(a, 1000000);
-}
-
-//gere grand chiffre
-//gere round 
