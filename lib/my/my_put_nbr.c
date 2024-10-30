@@ -20,12 +20,13 @@ int put_extreme_min(void)
     my_putchar(51);
     my_putchar(52);
     my_putchar(56);
-    return 0;
+    return 11;
 }
 
 int my_put_nbr(int nb)
 {
     int i = 1;
+    int nb_count = 0;
 
     if (nb == -2147483648) {
         put_extreme_min();
@@ -41,6 +42,7 @@ int my_put_nbr(int nb)
     while (i > 0) {
         my_putchar(48 + ((nb / i) % 10));
         i /= 10;
+        nb_count++;
     }
-    return 0;
+    return nb_count;
 }

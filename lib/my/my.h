@@ -43,7 +43,9 @@ int check_number(const char *str, int i);
 int my_getsign(char const *str);
 int my_put_float(double n, int pre);
 double my_round(double n, int pres);
-int my_putnbr_base(int nbr, char const *base);
+int my_putnbr_base(long  nbr, char const *base);
+int my_put_long(unsigned long int nb);
+int my_put_unsigned(long int nb);
 int my_printf(const char *format, ...);
 
 #endif /* MY_ */

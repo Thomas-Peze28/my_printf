@@ -25,25 +25,25 @@ int zero_case(int nbr)
     }
 }
 
-int my_putnbr_base(int nbr, char const *base)
+int my_putnbr_base(long nbr, char const *base)
 {
     int rest = 0;
-    int base_num = my_strlen(base);
-    char *result = malloc(0);
+    char *result = malloc(1 * sizeof(char));
     int i = 0;
     int isneg = 0;
 
     zero_case(nbr);
     funct_isneg(nbr, isneg);
     while (nbr != 0) {
-        rest = nbr % base_num;
-        nbr = nbr / base_num;
+        rest = nbr % my_strlen(base);
+        nbr = nbr / my_strlen(base);
         result[i] += base[rest];
         i++;
     }
     if (isneg == 1) {
         result[i] += '-';
     }
+    result[i] = '\0';
     my_revstr(result);
     my_putstr(result);
     return my_strlen(result);

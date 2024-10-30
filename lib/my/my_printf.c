@@ -8,7 +8,20 @@
 #include <stdarg.h>
 #include "my.h"
 
-int witch_f_follow(char fonction, va_list ap)
+int witch_f_follow2(char fonction, va_list ap, int nb_chara)
+{
+    switch (fonction) {
+    case 'u':
+        return my_put_unsigned(va_arg(ap, int));
+    case 'n':
+        *va_arg(ap, int *) = nb_chara;
+        return 0;
+    default:
+        return 0;
+    }
+}
+
+int witch_f_follow(char fonction, va_list ap, int nb_chara)
 {
     switch (fonction) {
     case 'd':
@@ -23,8 +36,13 @@ int witch_f_follow(char fonction, va_list ap)
         return my_putnbr_base(va_arg(ap, int), "0123456789ABCDEF");
     case 'o':
         return my_putnbr_base(va_arg(ap, int), "01234567");
+    case 'u':
+        return my_put_unsigned(va_arg(ap, int));
+    case 'p':
+    my_putstr("0x");
+        return my_putnbr_base((long int)va_arg(ap, long int), "0123456789abcdef") + 2;
     default:
-        return 0;
+        return witch_f_follow(fonction, ap, nb_chara);
     }
 }
 
@@ -43,11 +61,8 @@ int witch_f(char fonction, va_list ap, int nb_chara)
     case '%':
         my_putchar('%');
         return 1;
-    case 'n':
-        *va_arg(ap, int *) = nb_chara;
-        return 0;
     default:
-        return witch_f_follow(fonction, ap);
+        return witch_f_follow(fonction, ap, nb_chara);
     }
 }
 

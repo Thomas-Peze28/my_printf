@@ -6,13 +6,18 @@
 */
 
 #include "include/my.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
 
 int main(void)
 {
-    int len;
-    int len2;
-    my_printf("h %d %n %s %n\n", 10, &len, "World", &len2);
-    my_printf("%s %X\n", "Conv:", 61);
-    my_printf("Longueur de la premiere print : %d , la deuxieme est %d\n", len, len2);
+    printf("Son Unsigned int : %u\n", 50);
+    my_printf("Mon unsigned int : %u\n\n", 50);
+    printf("Son Unsigned int : %u\n", -1);
+    my_printf("Mon unsigned int : %u\n\n", -1);
+    printf("Son Unsigned int : %u\n", -10);
+    my_printf("Mon unsigned int : %u\n\n", -10);
+
     return 0;
 }

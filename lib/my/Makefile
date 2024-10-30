@@ -32,8 +32,11 @@ SRC	=	my_compute_power_rec.c	\
         my_getsign.c    \
 		my_str_to_word_array.c	\
 		my_put_float.c	\
-		my_printf.c	\
 		my_round.c	\
+		my_putnbr_base.c	\
+		my_put_long.c	\
+		my_put_unsigned.c	\
+		my_printf.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -42,9 +45,9 @@ NAME	=	libmy.a
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@cp my.h ../../include
-	@cp $(NAME) ../
+		ar rc $(NAME) $(OBJ)
+		cp my.h ../../include
+		cp $(NAME) ../../
 
 clean:
 	rm -f $(OBJ)
