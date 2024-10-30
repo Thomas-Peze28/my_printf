@@ -45,5 +45,6 @@ int my_put_float(double n, int pre);
 double my_round(double n, int pres);
 int my_putnbr_base(int nbr, char const *base);
 int my_printf(const char *format, ...);
+int my_putnbr_sc(double n, long pre);
 
 #endif /* MY_ */
