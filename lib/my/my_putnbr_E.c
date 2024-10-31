@@ -7,29 +7,7 @@
 
 #include "my.h"
 
-int nota_sc_cont(int dot, int nbcara)
-{
-    if (dot < 11 && dot > -11) {
-        if (dot > 0) {
-            my_putstr("+0");
-            nbcara = (my_put_nbr(dot - 1) + 2);
-        } else {
-            my_putstr("-0");
-            nbcara = (my_put_nbr(dot * -1 - 1) + 2);
-        }
-    } else {
-        if (dot > 0) {
-            my_putstr("+");
-            nbcara = (my_put_nbr(dot - 1));
-        } else {
-            my_putstr("-");
-            nbcara = (my_put_nbr(dot * -1 - 1));
-        }
-    }
-    return nbcara;
-}
-
-int nota_sc(int dot)
+int nota_sc_e(int dot)
 {
     int nbcara = 0;
 
@@ -43,16 +21,7 @@ int nota_sc(int dot)
     return nbcara;
 }
 
-double posi(double n)
-{
-    if (n < 0) {
-        n = n * -1;
-        my_putchar('-');
-    }
-    return n;
-}
-
-int my_putnbr_sc(double n, long pre)
+int my_putnbr_e(double n, long pre)
 {
     long div = 1;
     int dot = 0;
@@ -72,5 +41,5 @@ int my_putnbr_sc(double n, long pre)
             dot--;
         }
     }
-    return (my_put_float(temp, pre) + nota_sc(dot));
+    return (my_put_float(temp, pre) + nota_sc_e(dot));
 }

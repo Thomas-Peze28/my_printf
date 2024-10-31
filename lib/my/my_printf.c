@@ -23,7 +23,7 @@ int witch_f_follow2(char fonction, va_list ap, int nb_chara)
     case 'e':
         return my_putnbr_sc(va_arg(ap, double), 1000000);
     case 'E':
-        return my_putnbr_E(va_arg(ap, double), 1000000);
+        return my_putnbr_e(va_arg(ap, double), 1000000);
     default:
         return 0;
     }
@@ -47,7 +47,7 @@ int witch_f_follow(char fonction, va_list ap, int nb_chara)
     case 'u':
         return my_put_unsigned(va_arg(ap, int));
     default:
-        return witch_f_follow(fonction, ap, nb_chara);
+        return witch_f_follow2(fonction, ap, nb_chara);
     }
 }
 

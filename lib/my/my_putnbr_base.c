@@ -40,9 +40,6 @@ int my_putnbr_base(long nbr, char const *base)
         result[i] += base[rest];
         i++;
     }
-    if (isneg == 1) {
-        result[i] += '-';
-    }
     result[i] = '\0';
     my_revstr(result);
     my_putstr(result);
