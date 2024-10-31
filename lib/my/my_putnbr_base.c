@@ -5,15 +5,14 @@
 ** Convert a decimal number into an another base given
 */
 #include <stdlib.h>
+#include <stdio.h>
 #include "my.h"
 
 
-int funct_isneg(int nbr, int isneg)
+long int funct_isneg(long int nbr)
 {
     if (nbr < 0) {
-        nbr = -(nbr);
-        isneg = 1;
-        return isneg;
+        return 4294967296 + nbr;
     }
 }
 
@@ -25,15 +24,14 @@ int zero_case(int nbr)
     }
 }
 
-int my_putnbr_base(long nbr, char const *base)
+int my_putnbr_base(long int nbr, char const *base)
 {
-    int rest = 0;
+    long int rest = 0;
     char *result = malloc(1 * sizeof(char));
     int i = 0;
-    int isneg = 0;
 
     zero_case(nbr);
-    funct_isneg(nbr, isneg);
+    nbr = funct_isneg(nbr);
     while (nbr != 0) {
         rest = nbr % my_strlen(base);
         nbr = nbr / my_strlen(base);
