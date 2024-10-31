@@ -13,7 +13,8 @@ build_lib:
 clean:
 	make clean -C ./lib/my/
 
-fclean: 
+fclean:
 	make fclean -C ./lib/my/
+	rm libmy.a
 
 re: fclean all
