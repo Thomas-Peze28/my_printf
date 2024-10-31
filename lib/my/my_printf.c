@@ -20,6 +20,10 @@ int witch_f_follow2(char fonction, va_list ap, int nb_chara)
         my_putstr("0x");
         return my_putnbr_base((long int)va_arg(ap, long int),
         "0123456789abcdef") + 2;
+    case 'e':
+        return my_putnbr_sc(va_arg(ap, double), 1000000);
+    case 'E':
+        return my_putnbr_E(va_arg(ap, double), 1000000);
     default:
         return 0;
     }

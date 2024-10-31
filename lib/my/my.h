@@ -48,5 +48,6 @@ int my_put_long(unsigned long int nb);
 int my_put_unsigned(long int nb);
 int my_printf(const char *format, ...);
 int my_putnbr_sc(double n, long pre);
+int my_putnbr_E(double n, long pre);
 
 #endif /* MY_ */

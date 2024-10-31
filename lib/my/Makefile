@@ -39,6 +39,8 @@ SRC	=	my_compute_power_rec.c	\
 		my_put_long.c	\
 		my_put_unsigned.c	\
 		my_printf.c	\
+		my_putnbr_sc.c	\
+		my_putnbr_E.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
