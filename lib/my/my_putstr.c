@@ -18,7 +18,6 @@ int my_putstr(char const *str)
         my_putchar('l');
         my_putchar('l');
         my_putchar(')');
-        my_putchar('\0');
         return 0;
     }
     while (str[count] != '\0') {
