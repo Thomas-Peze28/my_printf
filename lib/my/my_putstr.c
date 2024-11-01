@@ -11,6 +11,7 @@
 int my_putstr(char const *str)
 {
     int count = 0;
+
     if (str == NULL) {
         my_putchar('(');
         my_putchar('n');
