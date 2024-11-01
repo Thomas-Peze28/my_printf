@@ -6,6 +6,7 @@
 */
 
 #include <stdarg.h>
+#include <stdio.h>
 #include "my.h"
 
 int witch_f_follow2(char fonction, va_list ap, int nb_chara)
@@ -17,6 +18,8 @@ int witch_f_follow2(char fonction, va_list ap, int nb_chara)
         *va_arg(ap, int *) = nb_chara;
         return 0;
     case 'p':
+        if (va_arg(ap, void *) == NULL)
+            return my_putstr("(nil)");
         my_putstr("0x");
         return my_putnbr_base((long int)va_arg(ap, long int),
         "0123456789abcdef") + 2;
@@ -44,8 +47,6 @@ int witch_f_follow(char fonction, va_list ap, int nb_chara)
         return my_putnbr_base(va_arg(ap, int), "0123456789ABCDEF");
     case 'o':
         return my_putnbr_base(va_arg(ap, int), "01234567");
-    case 'u':
-        return my_put_unsigned(va_arg(ap, int));
     default:
         return witch_f_follow2(fonction, ap, nb_chara);
     }
